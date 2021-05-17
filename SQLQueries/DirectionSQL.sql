@@ -1,0 +1,21 @@
+USE [annex]
+GO
+
+/****** Object:  Table [dbo].[Direction]    Script Date: 12/18/2020 14:53:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Direction](
+	[DirectionID] [int] IDENTITY(1,1) NOT NULL,
+	[DirectionTitle] [nvarchar](max) NOT NULL,
+	[DefaultDirection] [bit] NOT NULL,
+ CONSTRAINT [PK__Directio__87684626F9CB55B1] PRIMARY KEY CLUSTERED 
+(
+	[DirectionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+

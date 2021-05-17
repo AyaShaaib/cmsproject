@@ -1,0 +1,425 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/Site.Master.cs" Inherits="Annex.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%--    <meta http-equiv="refresh" content="950" />--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <title>Annex</title>
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <link href="/assets/plugins/morris/morris.css" rel="stylesheet" />
+    <link href="/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%--<div id="preloader"><div id="status"><div class="spinner"></div></div></div>--%>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+                    <i class="ion-close"></i>
+                </button>
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="index.html" class="logo"><i class="mdi mdi-assistant"></i>Annex</a>
+                        <!-- <a href="index.html" class="logo"><img src="assets/images/logo.png" height="24" alt="logo"></a> -->
+                    </div>
+                </div>
+
+                <div class="sidebar-inner slimscrollleft">
+
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li class="menu-title"><label id="lblmain" runat="server">Main</label></li>
+
+                            <li>
+                                <a href="/UserControl/Template/Menu/ListMenu.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Albums/ListAlbum.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Album</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Authors/ListAuthor.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Authors</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Content/ListContent.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Content</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Directions/ListDirection.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span id="lbldirection" runat="server">Direction </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Language/ListLanguage.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Language</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/ImagesAlbum/ListImages.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Images</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Category/ListCategory.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Categories</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Color/ListColors.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Colors</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/News/ListNews.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>News</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Products/ListProducts.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Products</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/UserControl/Template/Source/ListSources.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Source</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="/UserControl/Template/ProductType/ListProductTypes.aspx" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Product Types</span>
+                                </a>
+                            </li>
+                            
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- end sidebarinner -->
+            </div>
+
+            <div>
+                <div class="content-page">
+
+                    <div class="content">
+                        <!-- Top Bar Start -->
+
+                        <div class="topbar">
+
+                            <nav class="navbar-custom">
+
+                                <ul class="list-inline float-right mb-0">
+                                    <!-- language-->
+                                    <li class="list-inline-item dropdown notification-list hide-phone">
+                                     <a class="nav-link dropdown-toggle arrow-none waves-effect text-white" data-toggle="dropdown" href="#" role="button"
+                                            aria-haspopup="false" aria-expanded="false">English
+                                            <img src="/assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt="" />
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right language-switch">
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>
+                                            <a class="dropdown-item" href="#">
+                                                <img src="assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>
+                                        </div>
+                                  <%--    <asp:DropDownList  runat="server" ForeColor="White" BackColor="#5b6be8"  CssClass="border-0" ID="Languagesbox" AutoPostBack="true" OnSelectedIndexChanged="Languagesbox_SelectedIndexChanged" >
+                                            <asp:ListItem  Text="English" Value="en-US"></asp:ListItem>
+                                            <asp:ListItem Text="French" Value="fr-FR"></asp:ListItem>
+                                            <asp:ListItem Text="Italian" Value="it-IT"></asp:ListItem>
+                                        </asp:DropDownList>
+                                --%>
+                                    </li>
+                                    <li class="list-inline-item dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                                            aria-haspopup="false" aria-expanded="false">
+                                            <i class="ti-email noti-icon"></i>
+                                            <span class="badge badge-danger noti-icon-badge">5</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                            <!-- item-->
+                                            <div class="dropdown-item noti-title">
+                                                <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
+                                            </div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon">
+                                                    <img src="assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" />
+                                                </div>
+                                                <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                                            </a>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon">
+                                                    <img src="assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" />
+                                                </div>
+                                                <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You have 87 unread messages</small></p>
+                                            </a>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon">
+                                                    <img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" />
+                                                </div>
+                                                <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                                            </a>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">View All
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <li class="list-inline-item dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                                            aria-haspopup="false" aria-expanded="false">
+                                            <i class="ti-bell noti-icon"></i>
+                                            <span class="badge badge-success noti-icon-badge">23</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                            <!-- item-->
+                                            <div class="dropdown-item noti-title">
+                                                <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
+                                            </div>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                                <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                                            </a>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
+                                                <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
+                                            </a>
+
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                <div class="notify-icon bg-warning"><i class="mdi mdi-martini"></i></div>
+                                                <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                                            </a>
+
+                                            <!-- All-->
+                                            <a href="javascript:void(0);" class="dropdown-item notify-item">View All
+                                            </a>
+
+                                        </div>
+                                    </li>
+
+                                    <li class="list-inline-item dropdown notification-list">
+                                        <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                                            aria-haspopup="false" aria-expanded="false">
+                                            <img src="/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle" />
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                            <!-- item-->
+                                            <div class="dropdown-item noti-title">
+                                                <h5>Welcome</h5>
+                                            </div>
+                                            <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i>Profile</a>
+                                            <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i>My Wallet</a>
+                                            <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
+                                            <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i>Lock screen</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i>Logout</a>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                                <ul class="list-inline menu-left mb-0">
+                                    <li class="float-left">
+                                        <button class="button-menu-mobile open-left waves-light waves-effect">
+                                            <i class="mdi mdi-menu"></i>
+                                        </button>
+                                    </li>
+                                    <li class="hide-phone app-search">
+                                        <%--<form id = "form2" role="search" class="">
+                                            <input type="text" placeholder="Search..." class="form-control"/>
+                                            <a href="aaa"><i class="fa fa-search"></i></a>
+                                        </form>--%>
+                                    </li>
+                                </ul>
+                                <div class="clearfix">
+                                </div>
+
+
+                            </nav>
+                        </div>
+                        <!-- Top Bar End -->
+                        <asp:ScriptManager ID="updatePanel" runat="server"></asp:ScriptManager>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <script src="/Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.MultiFile.js" type="text/javascript"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/modernizr.min.js"></script>
+    <script src="/assets/js/detect.js"></script>
+    <script src="/assets/js/fastclick.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/jquery.blockUI.js"></script>
+    <script src="/assets/js/waves.js"></script>
+    <script src="/assets/js/jquery.nicescroll.js"></script>
+    <script src="/assets/js/jquery.scrollTo.min.js"></script>
+
+    <script src="/assets/plugins/skycons/skycons.min.js"></script>
+    <script src="/assets/plugins/raphael/raphael-min.js"></script>
+    <script src="/assets/plugins/morris/morris.min.js"></script>
+
+    <script src="/assets/plugins/dropzone/dist/dropzone.js"></script>
+    <script src="/assets/plugins/dropify/js/dropify.min.js"></script>
+    <script src="/assets/pages/dashborad.js"></script>
+    <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="/assets/plugins/datatables/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="/assets/plugins/ckeditor/ckeditor.js"></script>
+    <!-- Datatable init js -->
+    <script src="/assets/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable2').DataTable();
+        });
+    </script>
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+    <script>
+        /* BEGIN SVG WEATHER ICON */
+        if (typeof Skycons !== 'undefined') {
+            var icons = new Skycons(
+                { "color": "#fff" },
+                { "resizeClear": true }
+            ),
+                list = [
+                    "clear-day", "clear-night", "partly-cloudy-day",
+                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                    "fog"
+                ],
+                i;
+
+            for (i = list.length; i--;)
+                icons.set(list[i], list[i]);
+            icons.play();
+        };
+
+        // scroll
+
+        $(document).ready(function () {
+
+            $("#boxscroll").niceScroll({ cursorborder: "", cursorcolor: "#cecece", boxzoom: true });
+            $("#boxscroll2").niceScroll({ cursorborder: "", cursorcolor: "#cecece", boxzoom: true });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Basic
+            $('.dropify').dropify();
+
+            // Translated
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+
+            // Used events
+            var drEvent = $('#input-file-events').dropify();
+
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            drEvent.on('dropify.errors', function (event, element) {
+                console.log('Has Errors');
+            });
+
+            var drDestroy = $('#input-file-to-destroy').dropify();
+            drDestroy = drDestroy.data('dropify')
+            $('#toggleDropify').on('click', function (e) {
+                e.preventDefault();
+                if (drDestroy.isDropified()) {
+                    drDestroy.destroy();
+                } else {
+                    drDestroy.init();
+                }
+            })
+        });
+    </script>
+</body>
+</html>

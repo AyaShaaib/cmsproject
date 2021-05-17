@@ -1,0 +1,23 @@
+USE [Test website]
+GO
+
+/****** Object:  Table [dbo].[Poll]    Script Date: 1/5/2021 3:39:08 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Poll](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Question] [nvarchar](255) NOT NULL,
+	[Language] [nchar](50) NOT NULL,
+	[Date] [date] NOT NULL,
+	[Result] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_Poll] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+

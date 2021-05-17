@@ -1,0 +1,30 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Annex",
+      "appliesTo": "Annex.sln",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-cms",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-cms",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-UserRegistration",
+      "appliesTo": "UserControl/Template/User/UserRegistration.aspx",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-cms",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
